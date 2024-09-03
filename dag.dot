@@ -1,0 +1,28 @@
+digraph DAG {
+    node [shape=box, style=filled, color=green, fontcolor=black];
+
+    Begin_execution [fillcolor=lightgreen];
+    Stage_events [fillcolor=darkgreen];
+    Stage_songs [fillcolor=darkgreen];
+    Load_songplays_fact_table [fillcolor=lightcoral];
+    Load_song_dim_table [fillcolor=lightgreen];
+    Load_user_dim_table [fillcolor=lightgreen];
+    Load_artist_dim_table [fillcolor=lightgreen];
+    Load_time_dim_table [fillcolor=lightgreen];
+    Run_data_quality_checks [fillcolor=lightgreen];
+    End_execution [fillcolor=lightgreen];
+
+    Begin_execution -> Stage_events;
+    Begin_execution -> Stage_songs;
+    Stage_events -> Load_songplays_fact_table;
+    Stage_songs -> Load_songplays_fact_table;
+    Load_songplays_fact_table -> Load_song_dim_table;
+    Load_songplays_fact_table -> Load_user_dim_table;
+    Load_songplays_fact_table -> Load_artist_dim_table;
+    Load_songplays_fact_table -> Load_time_dim_table;
+    Load_song_dim_table -> Run_data_quality_checks;
+    Load_user_dim_table -> Run_data_quality_checks;
+    Load_artist_dim_table -> Run_data_quality_checks;
+    Load_time_dim_table -> Run_data_quality_checks;
+    Run_data_quality_checks -> End_execution;
+}
