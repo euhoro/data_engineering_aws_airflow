@@ -259,4 +259,4 @@ output "redshift_port" {
 
 output "redshift_database" {
   value = "example_db"  # Replace with your actual database name if different
-}
+} 
