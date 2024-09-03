@@ -36,6 +36,16 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+deployment/.env
+deployment/terraform.tfvars
+astro/
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
