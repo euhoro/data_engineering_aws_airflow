@@ -40,3 +40,9 @@ class SqlQueries:
                extract(month from start_time), extract(year from start_time), extract(dayofweek from start_time)
         FROM songplays
     """)
+
+    data_quality_tests = [
+        {
+            'test_sql': "SELECT COUNT(*) FROM {}",
+            'expected_result': -1
+        }]
