@@ -16,9 +16,6 @@ We have provided you with a project template that takes care of all the imports 
 
 You'll be provided with a helpers class that contains all the SQL transformations. Thus, you won't need to write the ETL yourselves, but you'll need to execute it with your custom operators.
 
-can you include this graph in the read.me file ? 
-
-Sure! Here is how you can include the graph in your README.md file using a code block:
 dot
 digraph DAG {
 node [shape=box, style=filled, color=green, fontcolor=black];
