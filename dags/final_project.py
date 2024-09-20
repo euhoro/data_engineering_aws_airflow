@@ -11,8 +11,6 @@ from helpers import SqlQueries
 
 
 import sys
-sys.path.insert(0, '/home/or/airflow/plugins/operators')
-sys.path.insert(0, '/home/or/airflow/plugins/helpers')
 
 from stage_redshift import StageToRedshiftOperator
 from load_fact import LoadFactOperator
