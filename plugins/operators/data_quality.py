@@ -23,7 +23,7 @@ class DataQualityOperator(BaseOperator):
         redshift_hook = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         
         # Iterate over sql test and tables
-        for i, test in enumerate(self.sql_quality_tests):
+        for i, test in enumerate(data_quality_tests):
             sql_test = test['test_sql']
             expected_result = test['expected_result']
             
@@ -44,3 +44,6 @@ class DataQualityOperator(BaseOperator):
                         raise ValueError(f"Data quality check failed. {table} contained {num_records} rows")
                     
                     logging.info(f"Data quality on table {table} check passed with {num_records} records")
+
+
+        
